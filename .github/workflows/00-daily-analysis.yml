@@ -1,10 +1,7 @@
 name: 每日股票分析
 
 on:
-  # 定时：工作日北京时间 17:07（UTC 09:07，周一至周五，错开整点高峰降低被跳过概率）
-  schedule:
-    - cron: '7 09 * * 1-5'
-  # 手动触发
+  # 仅通过手动或外部定时服务（cron-job.org）触发，避免 GitHub 自带 schedule 不按时执行/静默跳过
   workflow_dispatch:
     inputs:
       mode:
